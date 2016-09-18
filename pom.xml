@@ -4,16 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.flightroutes.common</groupId>
-        <artifactId>flightroutes-supom</artifactId>
-        <version>1.0.0</version>
-    </parent>
 
-    <groupId>com.flightroutes.flight</groupId>
-    <artifactId>fr-f-monitor</artifactId>
+    <groupId>com.linlemo.falcon.monitor</groupId>
+    <artifactId>falcon-monitor-api</artifactId>
     <version>1.0.1</version>
-    <name>fr-f-monitor</name>
+    <name>falcon-monitor-api</name>
     <url>http://maven.apache.org</url>
 
     <properties>

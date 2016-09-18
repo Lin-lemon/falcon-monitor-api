@@ -13,12 +13,12 @@
 #####3.1 配置pom依赖
 ```
         <dependency>
-            <groupId>com.flightroutes.flight</groupId>
-            <artifactId>fr-f-monitor</artifactId>
+            <groupId>com.linlemo.falcon.monitor</groupId>
+            <artifactId>falcon-monitor-api</artifactId>
             <version>1.0.1</version>
         </dependency>
 ```
-#####3.2添加配置文件 frMonitor.properties
+#####3.2添加配置文件 falconMonitor.properties
 配置文件内容
 
 ```
@@ -37,18 +37,18 @@ monitor.collect.jvminfo=0
 共有4种收集方式，可根据需要使用不同的方式收集。
 
 ```
-        long start = System.currentTimeMillis();
-        // do sth
-        long cost = System.currentTimeMillis() - start;
-        // 收集监控 计数＋1
-        FalconMonitor.recordOne("monitor_key_name");
-        // 收集监控 计数＋1; 时间＋cost
-        FalconMonitor.recordOne("monitor_key_name", cost);
+    long start = System.currentTimeMillis();
+    // do sth
+    long cost = System.currentTimeMillis() - start;
+    // 收集监控 计数＋1
+    FalconMonitor.recordOne("monitor_key_name");
+    // 收集监控 计数＋1; 时间＋cost
+    FalconMonitor.recordOne("monitor_key_name", cost);
 
-        // 收集监控 计数＋3
-        FalconMonitor.incrRecord("monitor_key_name", 3);
-        // 收集监控 计数＋3; 时间＋cost
-        FalconMonitor.incrRecord("monitor_key_name", 3, cost);
+    // 收集监控 计数＋3
+    FalconMonitor.incrRecord("monitor_key_name", 3);
+    // 收集监控 计数＋3; 时间＋cost
+    FalconMonitor.incrRecord("monitor_key_name", 3, cost);
 ```
 
 

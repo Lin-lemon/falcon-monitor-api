@@ -1,8 +1,8 @@
-package com.flightroutes.flight.monitor;
+package com.linlemo.falcon.monitor;
 
-import com.flightroutes.flight.monitor.config.MonitorConstant;
-import com.flightroutes.flight.monitor.util.MonitorSendUtil;
 import com.google.common.collect.Maps;
+import com.linlemo.falcon.monitor.config.MonitorConstant;
+import com.linlemo.falcon.monitor.util.MonitorSendUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +27,7 @@ public class MonitorPushScheduler {
             new ThreadFactory() {
                 @Override
                 public Thread newThread(Runnable r) {
-                    return new Thread(r, "MetricMonitor-Schduler");
+                    return new Thread(r, "MonitorPush-Schduler");
                 }
 
             });

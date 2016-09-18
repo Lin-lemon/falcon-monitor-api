@@ -1,4 +1,6 @@
-package com.flightroutes.flight.monitor.util;
+package com.linlemo.falcon.monitor.util;
+
+import com.linlemo.falcon.monitor.config.MonitorConstant;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,5 +20,9 @@ public class MonitorUtil {
 
     public static String makeTimeKeyName(String name) {
         return makeKeyName(name).concat("_time");
+    }
+
+    public static double calAvgCount(long count) {
+        return count == 0 ? 0D : count * 1.0D / MonitorConstant.MONITOR_PUSH_PERIOD_TIME;
     }
 }

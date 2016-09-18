@@ -1,9 +1,9 @@
-package com.flightroutes.flight.monitor;
+package com.linlemo.falcon.monitor;
 
-import com.flightroutes.flight.monitor.bean.ComboMonitorItem;
-import com.flightroutes.flight.monitor.bean.SingleMonitorItem;
-import com.flightroutes.flight.monitor.bean.TomcatInformations;
-import com.flightroutes.flight.monitor.util.MonitorUtil;
+import com.linlemo.falcon.monitor.bean.ComboMonitorItem;
+import com.linlemo.falcon.monitor.bean.SingleMonitorItem;
+import com.linlemo.falcon.monitor.bean.TomcatInformations;
+import com.linlemo.falcon.monitor.util.MonitorUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.management.GarbageCollectorMXBean;

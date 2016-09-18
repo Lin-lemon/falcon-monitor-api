@@ -1,4 +1,4 @@
-package com.flightroutes.flight.monitor.bean;
+package com.linlemo.falcon.monitor.bean;
 
 public class AgentPushItem {
 

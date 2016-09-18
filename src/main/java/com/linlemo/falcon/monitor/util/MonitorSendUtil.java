@@ -1,10 +1,10 @@
-package com.flightroutes.flight.monitor.util;
+package com.linlemo.falcon.monitor.util;
 
 import com.alibaba.fastjson.JSONObject;
-import com.flightroutes.flight.monitor.bean.AgentPushItem;
-import com.flightroutes.flight.monitor.bean.Tag;
-import com.flightroutes.flight.monitor.config.MonitorConstant;
 import com.google.common.collect.Lists;
+import com.linlemo.falcon.monitor.bean.AgentPushItem;
+import com.linlemo.falcon.monitor.bean.Tag;
+import com.linlemo.falcon.monitor.config.MonitorConstant;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.io.IOException;

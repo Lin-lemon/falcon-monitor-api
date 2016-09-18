@@ -1,7 +1,6 @@
-package com.flightroutes.flight.monitor.bean;
+package com.linlemo.falcon.monitor.bean;
 
-import com.flightroutes.flight.monitor.config.MonitorConstant;
-import com.flightroutes.flight.monitor.util.MonitorUtil;
+import com.linlemo.falcon.monitor.util.MonitorUtil;
 
 import java.util.Map;
 
@@ -28,7 +27,7 @@ public class ComboMonitorItem {
         long currTime = this.time;
         this.count = 0;
         this.time = 0;
-        return new ComboResultItem(calAvgCount(currCount), calAvgTime(currCount, currTime));
+        return new ComboResultItem(MonitorUtil.calAvgCount(currCount), calAvgTime(currCount, currTime));
     }
 
     private synchronized ComboResultItem computeAndSwap(long count, long time) {
@@ -36,7 +35,7 @@ public class ComboMonitorItem {
         long tmpTime = time - this.time;
         this.count = count;
         this.time = time;
-        return new ComboResultItem(tmpCount, calAvgTime(tmpCount, tmpTime));
+        return new ComboResultItem(MonitorUtil.calAvgCount(tmpCount), calAvgTime(tmpCount, tmpTime));
     }
 
     public static void computeComboMetric(Map<String, ComboMonitorItem> items, String key,
@@ -55,8 +54,23 @@ public class ComboMonitorItem {
     private static double calAvgTime(long count, long time) {
         return count == 0 ? 0D : time * 1.0D / count;
     }
-    
-    private static double calAvgCount(long count){
-    	return count == 0 ? 0D : count * 1.0D / MonitorConstant.MONITOR_PUSH_PERIOD_TIME;
+
+    public static class ComboResultItem {
+        private final double count;
+
+        private final double time;
+
+        ComboResultItem(double count, double time) {
+            this.count = count;
+            this.time = time;
+        }
+
+        public double getCount() {
+            return count;
+        }
+
+        public double getTime() {
+            return time;
+        }
     }
 }

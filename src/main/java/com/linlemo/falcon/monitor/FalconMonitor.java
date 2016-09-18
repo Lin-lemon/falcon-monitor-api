@@ -1,9 +1,8 @@
-package com.flightroutes.flight.monitor;
+package com.linlemo.falcon.monitor;
 
-import com.flightroutes.flight.monitor.bean.ComboMonitorItem;
-import com.flightroutes.flight.monitor.bean.ComboResultItem;
-import com.flightroutes.flight.monitor.bean.SingleMonitorItem;
-import com.flightroutes.flight.monitor.util.MonitorUtil;
+import com.linlemo.falcon.monitor.bean.ComboMonitorItem;
+import com.linlemo.falcon.monitor.bean.SingleMonitorItem;
+import com.linlemo.falcon.monitor.util.MonitorUtil;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -88,7 +87,7 @@ public class FalconMonitor {
         }
 
         for (Map.Entry<String, ComboMonitorItem> entry : comboItems.entrySet()) {
-            ComboResultItem item = entry.getValue().dumpAndClear();
+            ComboMonitorItem.ComboResultItem item = entry.getValue().dumpAndClear();
             ret.put(MonitorUtil.makeCountKeyName(entry.getKey()), item.getCount());
             ret.put(MonitorUtil.makeTimeKeyName(entry.getKey()), item.getTime());
         }

@@ -1,4 +1,4 @@
-package com.flightroutes.flight.monitor.util;
+package com.linlemo.falcon.monitor.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -27,10 +27,4 @@ public class MachineUtil {
         }
         return StringUtils.EMPTY;
     }
-
-    public static void main(String[] args) {
-        System.out.println(MachineUtil.getMachineName());
-        System.out.println(MachineUtil.getMachineIp());
-    }
-
 }

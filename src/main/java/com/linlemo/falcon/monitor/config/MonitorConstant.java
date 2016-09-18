@@ -1,4 +1,4 @@
-package com.flightroutes.flight.monitor.config;
+package com.linlemo.falcon.monitor.config;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -48,13 +48,13 @@ public class MonitorConstant {
 
     private static class FRMonitorConfig {
 
-        private static final String CONFIG_NAME = "frMonitor.properties";
+        private static final String CONFIG_NAME = "falconMonitor.properties";
 
         private static Properties monitorConfig = new Properties();
 
         static {
             try {
-                logger.info(" ====================== begin read  frMonitor.properties ==================");
+                logger.info(" ====================== begin read  falconMonitor.properties ==================");
                 InputStream in = MonitorConstant.class.getClassLoader().getResourceAsStream(CONFIG_NAME);
                 if (in == null) {
                     in = MonitorConstant.class.getClassLoader().getResourceAsStream("props/".concat(CONFIG_NAME));
@@ -62,7 +62,7 @@ public class MonitorConstant {
                 monitorConfig.load(in);
                 in.close();
                 logger.info(monitorConfig.toString());
-                logger.info(" ====================== end read  frMonitor.properties ==================");
+                logger.info(" ====================== end read  falconMonitor.properties ==================");
             } catch (Exception e) {
             }
         }

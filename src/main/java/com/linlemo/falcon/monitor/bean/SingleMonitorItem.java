@@ -1,7 +1,6 @@
-package com.flightroutes.flight.monitor.bean;
+package com.linlemo.falcon.monitor.bean;
 
-import com.flightroutes.flight.monitor.config.MonitorConstant;
-import com.flightroutes.flight.monitor.util.MonitorUtil;
+import com.linlemo.falcon.monitor.util.MonitorUtil;
 
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
@@ -22,13 +21,13 @@ public class SingleMonitorItem {
     }
 
     public double dumpAndClear() {
-    	long count = counter.getAndSet(0);
-        return count * 1.0D / MonitorConstant.MONITOR_PUSH_PERIOD_TIME;
+        long count = counter.getAndSet(0);
+        return MonitorUtil.calAvgCount(count);
     }
 
-    private long computeAndSwap(long count) {
+    private double computeAndSwap(long count) {
         long oldCount = counter.getAndSet(count);
-        return count - oldCount;
+        return MonitorUtil.calAvgCount(count - oldCount);
     }
 
     public static void computeSingleMetric(Map<String, SingleMonitorItem> items, String key,

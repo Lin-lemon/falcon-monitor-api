@@ -1,4 +1,4 @@
-package com.flightroutes.flight.monitor.bean;
+package com.linlemo.falcon.monitor.bean;
 
 /**
  * Created with IntelliJ IDEA.
