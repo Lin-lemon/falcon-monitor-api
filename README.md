@@ -1,5 +1,6 @@
 
 >小米open-falcon安装及使用手册:  http://book.open-falcon.org/zh/faq/qq.html
+
 ####1.使用场景
 结合小米的open-falcon监控系统使用，部署好agent之后，只能收集模版上的机器信息，比如cpu/内存占用率等，但是无法收集业务系统自定义的监控。这个jar就是解决业务系统自定义收集监控的功能。
 ####2.主要的三个功能点
